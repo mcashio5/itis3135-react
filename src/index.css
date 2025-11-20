@@ -1,10 +1,116 @@
-<nav>
-  <a href="https://github.com/mcashio5" target="_blank">GitHub</a>
-  <a href="https://mcashio5.github.io/" target="_blank">GitHub Pages</a>
-  <a href="https://webpages.charlotte.edu/mcashio5/" target="_blank">CLT Web Home</a>
-  <a href="./" target="_blank">Course Page</a>
-  <a href="https://itis3135-react-ten.vercel.app/" target="_blank">React3</a>
-  <a href="https://www.freecodecamp.org/mcashio5" target="_blank">freeCodeCamp</a>
-  <a href="https://www.codecademy.com/profiles/mcashio5" target="_blank">Codecademy</a>
-  <a href="https://www.linkedin.com/in/michael-cashion-a891082b6/" target="_blank">LinkedIn</a>
-</nav>
+/* src/index.css */
+
+/* Global layout */
+:root {
+  font-family: Arial, sans-serif;
+  color-scheme: dark;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0a2a4d;
+  color: #ffffff;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+.site-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.site-header {
+  background-color: #081d33;
+  padding: 16px 24px;
+  text-align: left;
+}
+
+.site-header h1 {
+  margin: 0 0 10px;
+  font-size: 1.8rem;
+}
+
+/* Primary nav */
+.primary-nav {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nav-separator {
+  color: #87ceeb;
+}
+
+.nav-pill {
+  border: none;
+  border-radius: 20px;
+  padding: 6px 16px;
+  background-color: #12426f;
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.nav-pill:hover {
+  background-color: #1a5a94;
+}
+
+.nav-pill-active {
+  background-color: #2e8ecf;
+}
+
+/* Main card */
+.main-card {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 32px 24px;
+  background-color: #082b4d;
+  border-radius: 16px;
+  text-align: center;
+}
+
+.main-card h2 {
+  margin-top: 0;
+}
+
+.tagline {
+  font-style: italic;
+  margin-bottom: 24px;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: auto;
+  background-color: #081d33;
+  padding: 16px 24px 10px;
+  text-align: center;
+}
+
+.footer-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 8px;
+}
+
+.footer-nav a {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+.site-footer p {
+  margin: 0;
+  color: #cccccc;
+  font-size: 0.9rem;
+}
