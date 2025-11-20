@@ -1,16 +1,27 @@
-import { Link } from "react-router-dom";
+// src/Header.jsx
+function Header({ currentPage, onNavChange }) {
+  const navButton = (id, label) => (
+    <button
+      type="button"
+      className={`nav-pill ${currentPage === id ? 'nav-pill-active' : ''}`}
+      onClick={() => onNavChange(id)}
+    >
+      {label}
+    </button>
+  );
 
-export default function Header() {
   return (
     <header className="site-header">
       <h1>Michael Cashion – ITIS 3135</h1>
-      <nav className="main-nav">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/contract">Course Contract</Link></li>
-          <li><Link to="/introduction">Introduction</Link></li>
-        </ul>
+      <nav className="primary-nav">
+        {navButton('home', 'Home')}
+        <span className="nav-separator">|</span>
+        {navButton('contract', 'Course Contract')}
+        <span className="nav-separator">|</span>
+        {navButton('introduction', 'Introduction')}
       </nav>
     </header>
   );
 }
+
+export default Header;
