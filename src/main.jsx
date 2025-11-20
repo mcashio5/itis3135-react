@@ -1,23 +1,18 @@
-import { StrictMode } from 'react';
-import { createRoot } from 'react-dom/client';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import './index.css';
-
-import Layout from './Layout.jsx';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
 import App from './App.jsx';
-import Introduction from './Introduction.jsx';
-import Contract from './Contract.jsx';
+import './index.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          <Route index element={<App />} />
-          <Route path="contract" element={<Contract />} />
-          <Route path="introduction" element={<Introduction />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
-  </StrictMode>
+import Introduction from "./Introduction.jsx";
+import Contract from "./Contract.jsx";
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <Router>
+    <Routes>
+      <Route path="/" element={<App />} />
+      <Route path="/introduction" element={<Introduction />} />
+      <Route path="/contract" element={<Contract />} />
+    </Routes>
+  </Router>
 );
