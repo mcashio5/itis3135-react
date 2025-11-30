@@ -1,9 +1,11 @@
+function Contract() {
 export default function Contract() {
-  document.title += " || " + "Contract";
   return (
-    <main>
-      <h2>Contract</h2>
-        <p className="tagline">
+    <>
+    <section className="main-card">
+      <h2>Course Contract</h2>
+      <p className="tagline">Commitment to course policies and academic integrity.</p>
+      <p className="tagline">
         Commitment to course policies and academic integrity.
       </p>
       <p>
@@ -11,6 +13,9 @@ export default function Contract() {
         of ITIS 3135. I will submit my own work, cite sources, and follow all
         timelines and accessibility/usability guidelines for web content.
       </p>
-    </main>
+    </>
+    </section>
   );
 }
+
+export default Contract;
