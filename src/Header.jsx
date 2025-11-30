@@ -7,7 +7,7 @@ export default function Header() {
             <Link to="/">Home</Link> || 
             <Link to="/introduction"> Introduction</Link> || 
             <Link to="/contract"> Contract</Link> ||
-            <Link to="/introductions"> Introductions</Link>
+            <Link to="/introductions"> Introductions</Link> ||
             </p>
            </nav>
     </header>);
