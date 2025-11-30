@@ -1,14 +1,11 @@
-import { Link } from 'react-router-dom'
-export default function Header() {
-    return (<header>
-        <h1>Michael Cashion Mighty Chicken || ITIS3135</h1>
-        <nav>
-            <p>
-            <Link to="/">Home</Link> || 
-            <Link to="/introduction"> Introduction</Link> || 
-            <Link to="/contract"> Contract</Link> ||
-            <Link to="/introductions"> Introductions</Link>
-            </p>
-           </nav>
-    </header>);
-}
+
+        {navButton('home', 'Home')}
+         <span className="nav-separator">|</span>
+        {navButton('contract', 'Course Contract')}
+        <span className="nav-separator">|</span>
+        {navButton('introduction', 'Introduction')}
+        <span className="nav-separator">|</span>
+        {navButton('introductions', 'Introductions')}
+      </nav>
+    </header>
+  );
