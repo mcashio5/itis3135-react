@@ -1,9 +1,10 @@
+function Introduction() {
 export default function Introduction() {
-  document.title += " || " + "Introduction";
   return (
-    <main>
+    <>
+    <section className="main-card">
       <h2>Introduction</h2>
-        <h2>Michael W. Cashion || Mighty Chicken</h2>
+      <h2>Michael W. Cashion || Mighty Chicken</h2>
         <figure>
             <img src="michael-cashion-sm.jpg" alt="Michael_Cashion" />
             <figcaption>Me at a fratnernity meeting, 2024</figcaption>
@@ -32,6 +33,9 @@ export default function Introduction() {
             <hr/>
             <p><small>I acknowledge that the information I present here is public. - M.C.</small></p>
             <p><small>Date:<i>11/20/2025</i></small></p>
-    </main>
+    </>
+    </section>
   );
 }
+
+export default Introduction;
