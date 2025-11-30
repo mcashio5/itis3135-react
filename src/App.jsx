@@ -1,43 +1,35 @@
-// src/App.jsx
-import { useState } from 'react';
-import Header from './Header.jsx';
-import Footer from './Footer.jsx';
-import Home from './Home.jsx';
-import Introduction from './Introduction.jsx';
-import Contract from './Contract.jsx';
-import './index.css';
-
-const PAGES = {
-  HOME: 'home',
-  INTRO: 'introduction',
-  CONTRACT: 'contract',
-};
+import { useEffect } from 'react'
+import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import './App.css'
+import Header from './Header'
+import Footer from './Footer'
+import Home from './Home';
+import Introduction from './Introduction';
+import Contract from './Contract';
+import Introductions from './Introductions';
 
 function App() {
-  const [currentPage, setCurrentPage] = useState(PAGES.HOME);
-
-  let content;
-  switch (currentPage) {
-    case PAGES.INTRO:
-      content = <Introduction />;
-      break;
-    case PAGES.CONTRACT:
-      content = <Contract />;
-      break;
-    case PAGES.HOME:
-    default:
-      content = <Home />;
-  }
-
+  useEffect(() => {
+    const script = document.createElement('script');
+    script.src = "https://kit.fontawesome.com/4d0fe3.js";
+    script.crossOrigin = "anonymous";
+    document.head.appendChild(script);
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, []);
   return (
-    <div className="site-wrapper">
-      <Header currentPage={currentPage} onNavChange={setCurrentPage} />
-      <main className="main-card">
-        {content}
-      </main>
+    <BrowserRouter>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/introduction" element={<Introduction />} />
+        <Route path="/contract" element={<Contract />} />
+        <Route path="/introductions" element={<Introductions />} />
+      </Routes>
       <Footer />
-    </div>
+    </BrowserRouter>
   );
 }
 
-export default App;
+export default App
