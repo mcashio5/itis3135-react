@@ -1,9 +1,12 @@
-// src/Home.jsx
 export default function Home() {
+  document.title += " || " + "Home";
   return (
-    <section className="main-card">
-      <h2>Welcome</h2>
-      <p>This is my ITIS 3135 course homepage.</p>
-    </section>
+    <main>
+      <h2>Home</h2>
+      <p>Hello! Welcome to my 3135 course website!</p>
+      <p>
+        This webpage was built using javascript to extend my knowledge of web deisgn
+      </p>
+    </main>
   );
 }
