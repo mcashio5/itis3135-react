@@ -5,7 +5,7 @@ export default function Introduction() {
       <h2>Introduction</h2>
         <h2>Michael W. Cashion || Mighty Chicken</h2>
         <figure>
-            <img src="/istanbulReact.jpg" alt="Nora_Miller" />
+            <img src="michael-cashion-sm.jpg" alt="Michael_Cashion" />
             <figcaption>Me at a fratnernity meeting, 2024</figcaption>
         </figure>
         <p>Hello everyone, I'm Michael. I am a computer science student working towards a bachelor of science in systems and networks administration. I enjoy watching football and fishing in my free time. I would like to graduate and one day open my own business after building enough capital.
