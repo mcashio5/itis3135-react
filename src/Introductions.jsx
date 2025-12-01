@@ -1,6 +1,8 @@
 if (error) return <p>Error: {error}</p>;
 if (!introductions) return <p>Loading...</p>;
 
+function Introductions() {
+export default function Introductions() {
 return (
   <>
     <h2>Introductions</h2>
