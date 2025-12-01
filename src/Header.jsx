@@ -1,11 +1,18 @@
+import { Link } from "react-router-dom";
 
-        {navButton('home', 'Home')}
-         <span className="nav-separator">|</span>
-        {navButton('contract', 'Course Contract')}
-        <span className="nav-separator">|</span>
-        {navButton('introduction', 'Introduction')}
-        <span className="nav-separator">|</span>
-        {navButton('introductions', 'Introductions')}
+export default function Header() {
+  return (
+    <>
+      <h1>Michael Cashions' Mighty Chicken || ITIS3135</h1>
+      <nav className="primary-nav">
+        <Link className="nav-pill" to="/">Home</Link>
+        <span className="nav-separator">||</span>
+        <Link className="nav-pill" to="/introduction">Introduction</Link>
+        <span className="nav-separator">||</span>
+        <Link className="nav-pill" to="/contract">Contract</Link>
+        <span className="nav-separator">||</span>
+        <Link className="nav-pill" to="/introductions">Introductions</Link>
       </nav>
-    </header>
+    </>
   );
+}
