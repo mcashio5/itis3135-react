@@ -1,14 +1,9 @@
-import { Link } from "react-router-dom";
+import Navbar from './Navbar.jsx';
 export default function Header() {
-  return (<header>
-        <h1>Michael Cashions's Mighty Chicken || ITIS3135</h1>
-        <nav>
-            <p>
-            <Link to="/">Home</Link> || 
-            <Link to="/introduction"> Introduction</Link> || 
-            <Link to="/contract"> Contract</Link> ||
-            <Link to="/introductions"> Introductions</Link>
-            </p>
-           </nav>
-    </header>);
+    return (
+        <header>
+            <h1>Adam Barnes' Angelic Bear ITIS 3135</h1>
+            <Navbar />
+        </header>
+    );
 }
