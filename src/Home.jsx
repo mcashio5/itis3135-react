@@ -1,10 +1,13 @@
 export default function Home() {
+  document.title += " || " + "Home";
   return (
-    <div className="main-box">
-    <section className="main-card">
-      <h2>Welcome</h2>
-      <p>This is my ITIS 3135 course homepage.</p>
-    </div>
-    </section>
+    <main>
+      <h2>Home</h2>
+      <p>Hello! Welcome to my 3135 course website!</p>
+      <p>
+        This website documents my journey into learning HTML, CSS, JavaScript, and key attention to detail skills to make
+        me a successful and consistent website builder.
+      </p>
+    </main>
   );
 }
