@@ -1,36 +1,9 @@
-
-import { useEffect } from 'react'
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
-import './App.css'
-import Header from './Header'
-import Footer from './Footer'
-import Home from './Home';
-import Introduction from './Introduction';
-import Contract from './Contract';
-import Introductions from './Introductions';
-
-function App() {
-  useEffect(() => {
-    const script = document.createElement('script');
-    script.src = "https://kit.fontawesome.com/4d0fe3.js";
-    script.crossOrigin = "anonymous";
-    document.head.appendChild(script);
-    return () => {
-      document.head.removeChild(script);
-    };
-  }, []);
+import './App.css';
+export default function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/introduction" element={<Introduction />} />
-        <Route path="/contract" element={<Contract />} />
-        <Route path="/introductions" element={<Introductions />} />
-      </Routes>
-      <Footer />
-    </BrowserRouter>
+    <>
+        <h2>Home</h2>
+        <p>This is all the content for my ITIS 3135 Class</p>
+    </>
   );
 }
-
-export default App
