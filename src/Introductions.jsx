@@ -1,67 +1,139 @@
-if (error) return <p>Error: {error}</p>;
-if (!introductions) return <p>Loading...</p>;
-
 import {useEffect, useState} from "react";
-import "./index.css";
 import StudentIntroduction from './StudentIntroduction';
-function Introductions() {
-export default function Introductions() {
-return (
-  <>
-    <h2>Introductions</h2>
+import "./index.css";
+export default function Introductions () {
+    const [introductions, setIntroductions] = useState(null);
+    const [error, setError] = useState(null);
+    const [nameSearch, setNameSearch] = useState("");
+    const [displayName, setDisplayName] = useState(true);
+    const [displayMascot, setDisplayMascot] = useState(true);
+    const [displayImage, setDisplayImage] = useState(true);
+    const [displayPersonalStatement, setDisplayPersonalStatement] = useState(true);
+    const [displayBackgrounds, setDisplayBackgrounds] = useState(true);
+    const [displayClasses, setDisplayClasses] = useState(true);
+    const [displayExtraInformation, setDisplayExtraInformation] = useState(true);
+    const [displayQuote, setDisplayQuote] = useState(true);
+    const [displayLinks, setDisplayLinks] = useState(true);
+    const [displaySlideshow, setDisplaySlideshow] = useState(false);
+    const [indexOfSlideshow, setIndexOfSlideshow] = useState(0);
+    useEffect( () => {
+        fetch("https://dvonb.xyz/api/2025-fall/itis-3135/students?full=1")
+        .then((response) => {
+            if(!response.ok) {
+                throw new Error("Network response was not ok");
+            } 
+            return response.json();
+        })
+        .then((data) => setIntroductions(data))
+        .catch((error) => setError(error.message));
+    }, []);
 
-    {introductions.map((data, index) => (
-      <article key={index} style={{ textAlign: "left" }}>
+    if (error) return <p>Error: {error}</p>;
+    if (!introductions) return <p>Loading...</p>;
 
-        {index > 0 && <hr />}
+    const filteredIntroductionData = introductions.filter((data) => {
+        if (nameSearch === "") return true;
+        const fullName = `${data.name.first} ${data.name.middleInitial}. "${data.name.preferred}" ${data.name.last}`;
+        return fullName.toLowerCase().includes(nameSearch.toLowerCase());
+    });
 
-        <h3>
-          {data.name.first}{" "}
-          {data.name.middleInitial ? `${data.name.middleInitial}. ` : ""}
-          {data.name.last} {data.divider} {data.mascot}
-        </h3>
+    if (error) return <p>Error: {error}</p>;
+    if (!introductions) return <p>Loading...</p>;
 
-        <figure>
-          <img src={`https://dvonb.xyz${data.media.src}`} style={{ width: "30%" }} alt={data.media.caption} />
-          <figcaption>{data.media.caption}</figcaption>
-        </figure>
+    return <>
+    <label>
+    Search For Student:&nbsp;&nbsp;
+        <input type="text" onChange={(event) => setNameSearch(event.target.value)}></input>
+        &nbsp;&nbsp; Name Search: &nbsp;&nbsp; <strong>{nameSearch}</strong>
+    </label>
+    <section>
+        <h3>Show Items:</h3>
+        <label>
+            Name:&nbsp;&nbsp;
+            <input type="checkbox" checked={displayName} onClick={() => setDisplayName(!displayName)}/>
+        </label>
+        <br></br>
+        <label>
+            Mascot:&nbsp;&nbsp;
+            <input type="checkbox" checked={displayMascot} onClick={() => setDisplayMascot(!displayMascot)}/>
+        </label>
+        <br></br>
+        <label>
+            Image: 
+            <input type="checkbox" checked={displayImage} onClick={() => setDisplayImage(!displayImage)} ></input>
+        </label>
+        <br></br>
+        <label>
+            Personal Statement: 
+            <input type="checkbox" checked={displayPersonalStatement} onClick={() => setDisplayPersonalStatement(!displayPersonalStatement)} ></input>
+        </label>
+        <br></br>
+        <label>
+            Backgrounds: 
+            <input type="checkbox" checked={displayBackgrounds} onClick={() => setDisplayBackgrounds(!displayBackgrounds)} ></input>
+        </label>
+        <br></br>
+        <label>
+            Classes: 
+            <input type="checkbox" checked={displayClasses} onClick={() => setDisplayClasses(!displayClasses)} ></input>
+        </label>
+        <br></br>
+        <label>
+            Extra Information: 
+            <input type="checkbox" checked={displayExtraInformation} onClick={() => setDisplayExtraInformation(!displayExtraInformation)} ></input>
+        </label>
+        <br></br>
+        <label>
+            Quote: 
+            <input type="checkbox" checked={displayQuote} onClick={() => setDisplayQuote(!displayQuote)} ></input>
+        </label>
+        <br></br>
+        <label>
+            Links: 
+            <input type="checkbox" checked={displayLinks} onClick={() => setDisplayLinks(!displayLinks)} ></input>
+        </label>
+        <br></br>
+        <button onClick = {() => setDisplaySlideshow(!displaySlideshow)}>
+            {displaySlideshow ? "View All" : "View Slideshow"}
+        </button>
+    </section>
 
-        <p>{data.personalStatement}</p>
+    {displaySlideshow ?
+    <>
+    <button onClick = {() => indexOfSlideshow + 1 >= introductions.length ? setIndexOfSlideshow(0) : setIndexOfSlideshow(indexOfSlideshow + 1)}>
+        Next
+    </button>
+    <button onClick = {() => indexOfSlideshow - 1 < 0 ? setIndexOfSlideshow(introductions.length - 1) : setIndexOfSlideshow(indexOfSlideshow - 1)}>
+        Previous
+    </button>
+     <StudentIntroduction 
+     data={introductions[indexOfSlideshow]} 
+     displayImage={displayImage} 
+     displayName={displayName} 
+     displayMascot={displayMascot}
+     displayPersonalStatement={displayPersonalStatement}
+     displayBackgrounds={displayBackgrounds}
+     displayClasses={displayClasses}
+     displayExtraInformation={displayExtraInformation}
+     displayQuote={displayQuote}
+     displayLinks={displayLinks}/>
+    </>
 
-        <ul>
-          <li><strong>Personal Background:</strong> {data.backgrounds.personal}</li>
-          <li><strong>Professional Background:</strong> {data.backgrounds.professional}</li>
-          <li><strong>Academic Background:</strong> {data.backgrounds.academic}</li>
-          <li><strong>Primary Computer:</strong> I use an {data.platform.device}, {data.platform.os}, laptop.</li>
+    :
 
-          <li><strong>Courses I'm Taking & Why:</strong>
-            <ul>
-              {data.courses.map((course, i) => (
-                <li key={i}><strong>{course.code} {course.name}:</strong> {course.reason}</li>
-              ))}
-            </ul>
-          </li>
-
-          <li><strong>Funny/Interesting Item:</strong> {data.funFact}</li>
-
-          {data.additional && (
-            <li><strong>Something Additional to Share:</strong> {data.additional}</li>
-          )}
-        </ul>
-
-        <p>"{data.quote.text}"</p>
-        <p>- {data.quote.author}</p>
-
-        <p>
-          <a href={data.links.charlotte}>Charlotte</a> {data.divider}
-          <a href={data.links.github}>GitHub</a> {data.divider}
-          <a href={data.links.githubio}>GitHub.io</a> {data.divider}
-          <a href={data.links.itis3135}>ITIS3135</a> {data.divider}
-          <a href={data.links.freecodecamp}>freeCodeCamp</a> {data.divider}
-          <a href={data.links.codecademy}>Codecademy</a> {data.divider}
-          <a href={data.links.linkedin}>LinkedIn</a>
-        </p>
-      </article>
-    ))}
-  </>
-);
+    filteredIntroductionData.map((data,index) => 
+        <StudentIntroduction key={index} data={data} 
+    displayName={displayName} 
+    displayMascot={displayMascot} 
+    displayImage={displayImage}
+    displayPersonalStatement={displayPersonalStatement}
+     displayBackgrounds={displayBackgrounds}
+     displayClasses={displayClasses}
+     displayExtraInformation={displayExtraInformation}
+     displayQuote={displayQuote}
+     displayLinks={displayLinks}
+    ></StudentIntroduction>
+    )
+}
+    </>
+}
