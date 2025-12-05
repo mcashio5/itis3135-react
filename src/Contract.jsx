@@ -1,21 +1,18 @@
-function Contract() {
 export default function Contract() {
+  document.title += " || " + "Contract";
   return (
-    <>
-    <section className="main-card">
-      <h2>Course Contract</h2>
-      <p className="tagline">Commitment to course policies and academic integrity.</p>
-      <p className="tagline">
-        Commitment to course policies and academic integrity.
-      </p>
-      <p>
-        I, Michael Cashion, agree to abide by the rules, policies, and standards
-        of ITIS 3135. I will submit my own work, cite sources, and follow all
-        timelines and accessibility/usability guidelines for web content.
-      </p>
-    </>
-    </section>
+    <main>
+      <h2>Contract</h2>
+        <p> I, Nora R. Miller agree to abide by the terms of the course contract in my Fall 2025, ITIS3135, Front-End Web App Development with my instructor, 
+            Professor D.I. von Briesen. </p>
+        <p>I understand that all work that I do on publicly available online tools will be available to the world, 
+            and will not put information there that is inappropriate for schoolwork, or that I wish to keep private. I also understand that it is my work that counts for attendance, 
+            not logins or showing up for class. </p>
+        <p>As such, failure to turn in assignments may show as absences. I also understand that given the structure and content of this class it is 
+            possible to find many examples online or even view my classmates’ code directly. I swear that I will only use these resources to learn, 
+            and will not cut and paste code except where I have properly given credit (i.e. external libraries) and never from my classmates.</p>
+        <p>Nora R. Miller, 25 August 2025
+        </p>
+    </main>
   );
 }
-
-export default Contract;
