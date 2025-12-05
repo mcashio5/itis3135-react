@@ -1,6 +1,9 @@
 if (error) return <p>Error: {error}</p>;
 if (!introductions) return <p>Loading...</p>;
 
+import {useEffect, useState} from "react";
+import "./index.css";
+import StudentIntroduction from './StudentIntroduction';
 function Introductions() {
 export default function Introductions() {
 return (
