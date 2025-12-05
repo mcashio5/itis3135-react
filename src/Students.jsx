@@ -1,0 +1,57 @@
+import './App.css';
+
+export default function Introduction() {
+    return (
+
+        <>
+        <h2>Introduction</h2>
+        <h3>Adam Barnes | Angelic Bear</h3>
+        <p>I acknowledge that any information I post on here will be public. AB 8/23/2025</p>
+        <figure>    
+            <img src="./image-from-iOS.jpg" alt="Picture of me with my siblings in SF" />
+        <figcaption>Me with my siblings in San Francisco.</figcaption>
+        </figure>
+        <p>I’m in my 2nd year at UNCC and I am majoring in computer science with a concentration in software engineering. I like to play basketball and go to the gym, and I am looking forward to meeting some of my classmates who share the same interests. </p>
+        <ul>
+            <li>
+                <p>Personal Background: I was born and raised in Charlotte, North Carolina, but I have traveled all across the country with my family as my dad is an artist.</p>
+            </li>
+            <li>
+                <p>Professional Background: I worked for a couple of years at an indoor pool in Charlotte, and I am currently working an internship from home part time.</p>
+            </li>
+            <li>
+                <p>Academic Background: I’m in my second year but am classified as a Junior this year.</p>
+            </li>
+            <li>
+                <p>Primary Computer: Lenovo, Windows 11, Laptop, my room</p>
+            </li>
+            <li>
+                Courses I’m Taking & Why:
+            </li>
+            <li >
+            <ul>
+                <li>
+                    <p>ITIS-3135 Front-End Web App Development: I wanted to understand the behind the scenes of web development</p>
+                </li>
+                <li>
+                    <p>ITSC-3146 Intro to Operating Systems & Networking: I am required to take this course for my major.</p>
+                </li>
+                <li>
+                    <p>ITSC-3155 Software Engineering: This course is in my concentration and I am curious to see how I like it.</p>
+                </li>
+                <li>
+                    <p>PSYC-1101L General Phychology Lab: I needed this course as I haven’t met all the gen-ed requirements for my degree.</p>
+                </li>
+                <li>
+                    <p>STAT-2122 Intro to Prob & Stat: This is another course that I need, as I haven't gotten all of my math credits yet.</p> 
+                </li>
+            </ul>
+            </li>
+        </ul>
+        </>
+        
+        
+    
+    
+    );
+}
