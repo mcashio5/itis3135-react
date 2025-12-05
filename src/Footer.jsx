@@ -1,16 +1,15 @@
-import { Link } from 'react-router-dom'
-export default function Footer() {
-    return (<footer>
-        <nav>
-            <p>
-            <a href="https://webpages.charlotte.edu/nmille73/" target="_blank" rel="noopener noreferrer">CLT Web</a> ||
-            <a href="https://github.com/nmille73-gif/nmille73-gif.github.io" target="_blank" rel="noopener noreferrer">GitHub</a> ||
-            <a href="https://nmille73-gif.github.io/itis3135/" target="_blank" rel="noopener noreferrer">GitHub.io</a> ||
-            <a href="https://www.freecodecamp.org/noramill1202" target="_blank" rel="noopener noreferrer">freeCodeCamp</a> ||
-            <a href="https://www.codecademy.com/profiles/noramill1202" target="_blank" rel="noopener noreferrer">Codecademy</a> ||
-            <a href="https://www.linkedin.com/in/nora-miller-327825298/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-        </p>
-        </nav>
-    <p>Website Desgined by <a href="millernoraincorp.com/">Miller Nora Incorporated</a>&copy; 2025</p>
-    </footer>);
+export default function Footer(){
+    return (
+        <footer>
+    <a href="https://webpages.charlotte.edu/abarne94/">CLT Web</a> || 
+        <a href="https://github.com/adambarnes917/adambarnes917.github.io">GitHub Profile</a> || 
+        <a href="https://adambarnes917.github.io/">GitHub.io</a>|| 
+        <a href="https://adambarnes917.github.io/itis3135/">GitHub.io 3135</a> || 
+        <a href="https://www.freecodecamp.org/adambarnes">FreeCodeCamp</a> || 
+        <a href="https://www.codecademy.com/profiles/adambarnes917">CodeAcademy</a> || 
+        <a href="https://www.linkedin.com/in/adam-barnes-7a78a9327/">LinkedIn</a>
+    <p><a href="mascot/">Angelic Bear</a></p>
+    <p>Designed by <a href="thebarnesdesign.com">Barnes Design ©2025</a></p>
+</footer>
+    );
 }
