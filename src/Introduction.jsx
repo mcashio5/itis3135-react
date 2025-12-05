@@ -1,41 +1,37 @@
-function Introduction() {
 export default function Introduction() {
+  document.title += " || " + "Introduction";
   return (
-    <>
-    <section className="main-card">
+    <main>
       <h2>Introduction</h2>
-      <h2>Michael W. Cashion || Mighty Chicken</h2>
+        <h2>Nora R. Miller || Neurotic Manatee</h2>
         <figure>
-            <img src="michael-cashion-sm.jpg" alt="Michael_Cashion" />
-            <figcaption>Me at a fratnernity meeting, 2024</figcaption>
+            <img src="/michael-cashion-sm.jpg" alt="Michael_Cashion" />
+            <figcaption>Istanbul, Turkey in 2025</figcaption>
         </figure>
-        <p>Hello everyone, I'm Michael. I am a computer science student working towards a bachelor of science in systems and networks administration. I enjoy watching football and fishing in my free time. I would like to graduate and one day open my own business after building enough capital.
+        <p>Hello everyone, I'm Nora! A few things about me are that I love reading - especially Stephen King novels,  I thoroughly enjoy traveling when given the opportunity, and I'm the treasurer of UNCC's Culinary Club, so I spend an incredible amount of my time cooking and eating. I am currently attempting to break a caffeine addiction, so we'll see how that goes.
         </p>
         <ul>
-            <li><b>Personal Background:</b>I am originally from Raleigh and am a huge Washington sports fan. I don't enjoy school and am ready to graduate and start working.</li>
-            <li><b>Professional Background:</b>I completed my second internship this summer at Teleflex Medical where I got exposure to many different fields of IT and how a network functions from the ground up as well as gaining a certification in Microsoft Azure.</li>
-            <li><b>Academic Background:</b>I am a computer science major in my fourth year at UNCC.</li>
-            <li><b>Primary Computer:</b>I primarily use my Macbook Pro for most tasks.</li>
+            <li><b>Personal Background:</b>I was born in New Haven, CT, but have spent over 18 years of my life in Apex, NC.</li>
+            <li><b>Professional Background:</b>I held a Cybersecurity Internship at Fidelity this past summer!</li>
+            <li><b>Academic Background:</b> I am a junior studying computer science with a concentration in cybersecurity and a minor in French.</li>
+            <li><b>Primary Computer:</b>I use an Apple, MacOS, laptop, primarily at my apartment.</li>
             <li><b>Courses I'm Taking & Why:</b>
                 <ul>
-                    <li><b>ITSC-2175-Logic and Algorithms: Required for my major.</li>
-                    <li><b>ITIS 3135 - Front-End Web Application Development: This course.</li>
-                    <li><b>ITSC3155 - Software Engineering: It is require</li>
-                    <li><b>ITSC 3146 - Intro Operating Systems & Networking: It is a requirement for understanding systems and networks.</li>
-                    <li><b>ITCS 3166 - Intro to Computer Networks: Required course for my major.</b>
+                    <li><b>ITIS3135 - Front-End Web Application Development: </b>It is required first and foremost, but I am also interested in learning more about front-end development.</li>
+                    <li><b>ITSC3146 - Introduction to Operating Systems: </b>It is required, but from what I understand the information and knowledge bases from this course are highly valuable in my future field.</li>
+                    <li><b>ITSC3155 - Software Engineering: </b>It is required, but hopefully I can expand my fluency in many coding languages and add it to my resume.</li>
+                    <li><b>ITSC3688 - Computers and Their Impact on Society: </b>It is required BUT I do think that communication skills are highly valuable and incredibly important to have confidence in.</li>
+                    <li><b>MATH2164 - Matrices and Linear Algebra: </b>It is required but will hopefully put me in the right flow of thinking when it comes to solving simila</li>
                 </ul>
                 </li>
-            <li><b>Funny/Interesting Fact about Me: </b>I have a little brother who is not my twin yet we still look and act identical despite a 4 year age difference.</li>
+            <li><b>Funny/Interesting Item to Remember Me by: </b>I am sort of terrified of Scandinavian architecture/interior design. I cannot fully explain why, maybe I was traumatized by watching Midsommar a few years ago, but I find walking into IKEA deeply unsettling.</li>
         </ul>
-        <p style={{textAlign: 'center'}}>"Whether you think you can, or you think you can't, you're right" <br/>
-           <i> - Henry Ford</i>
+        <p style={{textAlign: 'center'}}>"Every Second Counts." <br/>
+           <i> - Carmy, The Bear </i>
             </p>
             <hr/>
             <p><small>I acknowledge that the information I present here is public. - M.C.</small></p>
-            <p><small>Date:<i>11/20/2025</i></small></p>
-    </>
-    </section>
+            <p><small>Date:<i>8/20/2025</i></small></p>
+    </main>
   );
 }
-
-export default Introduction;
