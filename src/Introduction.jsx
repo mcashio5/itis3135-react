@@ -1,37 +1,57 @@
+import './App.css';
+
 export default function Introduction() {
-  document.title += " || " + "Introduction";
-  return (
-    <main>
-      <h2>Introduction</h2>
-        <h2>Nora R. Miller || Neurotic Manatee</h2>
-        <figure>
-            <img src="/michael-cashion-sm.jpg" alt="Michael_Cashion" />
-            <figcaption>Istanbul, Turkey in 2025</figcaption>
+    return (
+
+        <>
+        <h2>Introduction</h2>
+        <h3>Adam Barnes | Angelic Bear</h3>
+        <p>I acknowledge that any information I post on here will be public. AB 8/23/2025</p>
+        <figure>    
+            <img src="./image-from-iOS.jpg" alt="Picture of me with my siblings in SF" />
+        <figcaption>Me with my siblings in San Francisco.</figcaption>
         </figure>
-        <p>Hello everyone, I'm Nora! A few things about me are that I love reading - especially Stephen King novels,  I thoroughly enjoy traveling when given the opportunity, and I'm the treasurer of UNCC's Culinary Club, so I spend an incredible amount of my time cooking and eating. I am currently attempting to break a caffeine addiction, so we'll see how that goes.
-        </p>
+        <p>I’m in my 2nd year at UNCC and I am majoring in computer science with a concentration in software engineering. I like to play basketball and go to the gym, and I am looking forward to meeting some of my classmates who share the same interests. </p>
         <ul>
-            <li><b>Personal Background:</b>I was born in New Haven, CT, but have spent over 18 years of my life in Apex, NC.</li>
-            <li><b>Professional Background:</b>I held a Cybersecurity Internship at Fidelity this past summer!</li>
-            <li><b>Academic Background:</b> I am a junior studying computer science with a concentration in cybersecurity and a minor in French.</li>
-            <li><b>Primary Computer:</b>I use an Apple, MacOS, laptop, primarily at my apartment.</li>
-            <li><b>Courses I'm Taking & Why:</b>
-                <ul>
-                    <li><b>ITIS3135 - Front-End Web Application Development: </b>It is required first and foremost, but I am also interested in learning more about front-end development.</li>
-                    <li><b>ITSC3146 - Introduction to Operating Systems: </b>It is required, but from what I understand the information and knowledge bases from this course are highly valuable in my future field.</li>
-                    <li><b>ITSC3155 - Software Engineering: </b>It is required, but hopefully I can expand my fluency in many coding languages and add it to my resume.</li>
-                    <li><b>ITSC3688 - Computers and Their Impact on Society: </b>It is required BUT I do think that communication skills are highly valuable and incredibly important to have confidence in.</li>
-                    <li><b>MATH2164 - Matrices and Linear Algebra: </b>It is required but will hopefully put me in the right flow of thinking when it comes to solving simila</li>
-                </ul>
+            <li>
+                <p>Personal Background: I was born and raised in Charlotte, North Carolina, but I have traveled all across the country with my family as my dad is an artist.</p>
+            </li>
+            <li>
+                <p>Professional Background: I worked for a couple of years at an indoor pool in Charlotte, and I am currently working an internship from home part time.</p>
+            </li>
+            <li>
+                <p>Academic Background: I’m in my second year but am classified as a Junior this year.</p>
+            </li>
+            <li>
+                <p>Primary Computer: Lenovo, Windows 11, Laptop, my room</p>
+            </li>
+            <li>
+                Courses I’m Taking & Why:
+            </li>
+            <li >
+            <ul>
+                <li>
+                    <p>ITIS-3135 Front-End Web App Development: I wanted to understand the behind the scenes of web development</p>
                 </li>
-            <li><b>Funny/Interesting Item to Remember Me by: </b>I am sort of terrified of Scandinavian architecture/interior design. I cannot fully explain why, maybe I was traumatized by watching Midsommar a few years ago, but I find walking into IKEA deeply unsettling.</li>
+                <li>
+                    <p>ITSC-3146 Intro to Operating Systems & Networking: I am required to take this course for my major.</p>
+                </li>
+                <li>
+                    <p>ITSC-3155 Software Engineering: This course is in my concentration and I am curious to see how I like it.</p>
+                </li>
+                <li>
+                    <p>PSYC-1101L General Phychology Lab: I needed this course as I haven’t met all the gen-ed requirements for my degree.</p>
+                </li>
+                <li>
+                    <p>STAT-2122 Intro to Prob & Stat: This is another course that I need, as I haven't gotten all of my math credits yet.</p> 
+                </li>
+            </ul>
+            </li>
         </ul>
-        <p style={{textAlign: 'center'}}>"Every Second Counts." <br/>
-           <i> - Carmy, The Bear </i>
-            </p>
-            <hr/>
-            <p><small>I acknowledge that the information I present here is public. - M.C.</small></p>
-            <p><small>Date:<i>8/20/2025</i></small></p>
-    </main>
-  );
+        </>
+        
+        
+    
+    
+    );
 }
