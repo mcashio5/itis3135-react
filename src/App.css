@@ -298,4 +298,20 @@ legend {
   nav.main-nav {
     flex-wrap: wrap;
   }
+  /* Contract page adjustments */
+.contract-card {
+  max-width: 650px;
+  text-align: center;
+}
+
+.contract-card p {
+  margin-bottom: 1.4rem;
+  font-size: 1.05rem;
+  line-height: 1.55;
+}
+
+.contract-signature {
+  margin-top: 2rem;
+  font-size: 1.1rem;
+}
 }
