@@ -30,21 +30,25 @@ export default function Students() {
     fetchStudents();
   }, []);
 
-  if (loading) {
+   if (loading) {
     return (
-      <main>
-        <h2>ITIS 3135 Student Introductions</h2>
-        <p>Loading…</p>
-      </main>
+      <section className="content-shell">
+        <div className="inner-card students-card">
+          <h2 className="students-title">ITIS 3135 Student Introductions</h2>
+          <p>Loading…</p>
+        </div>
+      </section>
     );
   }
 
   if (error) {
     return (
-      <main>
-        <h2>ITIS 3135 Student Introductions</h2>
-        <p>{error}</p>
-      </main>
+      <section className="content-shell">
+        <div className="inner-card students-card">
+          <h2 className="students-title">ITIS 3135 Student Introductions</h2>
+          <p>{error}</p>
+        </div>
+      </section>
     );
   }
 
@@ -77,151 +81,161 @@ export default function Students() {
   };
 
   return (
-    <main >
-      <h2>ITIS 3135 Student Introductions</h2>
+    <section className="content-shell students-shell">
+      <div className="inner-card students-card">
+        <h2 className="students-title">ITIS 3135 Student Introductions</h2>
 
-      <section >
-        <label>
-          Search by name, mascot, or prefix:
-        </label>
-        <input
-          type="text"
-          value={searchTerm}
-          placeholder="e.g. Michael"
-          onChange={(e) => {
-            setSearchTerm(e.target.value);
-            setCurrentIndex(0);
-          }}
-          
-        />
-      </section>
+        {/* search */}
+        <div className="students-controls">
+          <label htmlFor="student-search">
+            Search by name, mascot, or prefix:
+          </label>
+          <input
+            id="student-search"
+            className="students-search-input"
+            type="text"
+            value={searchTerm}
+            placeholder="e.g. Michael"
+            onChange={(e) => {
+              setSearchTerm(e.target.value);
+              setCurrentIndex(0);
+            }}
+          />
+        </div>
 
-      <section>
-        <button onClick={toggleMode} >
-          {showSingle ? "Show All" : "Show One at a Time"}
-        </button>
+        {/* mode / nav buttons */}
+        <div className="students-controls students-toggle">
+          <button onClick={toggleMode}>
+            {showSingle ? "Show All" : "Show One at a Time"}
+          </button>
 
-        {showSingle && hasResults && (
-          <>
-            <button onClick={handlePrev} >
-              ◀ Previous
-            </button>
-            <button onClick={handleNext}>Next ▶</button>
-          </>
+          {showSingle && hasResults && (
+            <div className="students-nav-buttons">
+              <button onClick={handlePrev}>◀ Previous</button>
+              <button onClick={handleNext}>Next ▶</button>
+            </div>
+          )}
+
+          {showSingle && !hasResults && (
+            <p>No students match that search.</p>
+          )}
+        </div>
+
+        {!hasResults && (
+          <p>No students found. Try changing your search.</p>
         )}
 
-        {showSingle && !hasResults && (
-          <p>No students match that search.</p>
-        )}
-      </section>
+        {/* student cards */}
+        <div className="students-list">
+          {toDisplay.map((student) => (
+            <article key={student.prefix} className="student-card">
+              <header className="student-header">
+                <h3>
+                  {student.name.first} {student.name.last}
+                </h3>
+                <p className="student-meta">
+                  Prefix: <strong>{student.prefix}</strong> &nbsp;|&nbsp;
+                  Mascot: <strong>{student.mascot}</strong>
+                </p>
+              </header>
 
-      {!hasResults && <p>No students found. Try changing your search.</p>}
-
-      <section>
-        {toDisplay.map((student) => (
-          <article
-            key={student.prefix}
-            
-          >
-            <header>
-              <h3>
-                {student.name.first} {student.name.last}
-              </h3>
               <p>
-                Prefix: <strong>{student.prefix}</strong> &nbsp;|&nbsp; Mascot:{" "}
-                <strong>{student.mascot}</strong>
+                <strong>Personal:</strong> {student.backgrounds?.personal}
               </p>
-            </header>
-
-            <p>
-              <strong>Personal:</strong> {student.backgrounds?.personal}
-            </p>
-            <p>
-              <strong>Academic:</strong> {student.backgrounds?.academic}
-            </p>
-
-            {student.funFact && (
               <p>
-                <strong>Fun fact:</strong> {student.funFact}
+                <strong>Academic:</strong> {student.backgrounds?.academic}
               </p>
-            )}
 
-            {student.quote?.text && (
-              <blockquote
-                
-              >
-                “{student.quote.text}”
-                {student.quote.author && <> — {student.quote.author}</>}
-              </blockquote>
-            )}
+              {student.funFact && (
+                <p>
+                  <strong>Fun fact:</strong> {student.funFact}
+                </p>
+              )}
 
-            {student.media?.hasImage && (
-              <figure>
-                <img
-                  src={`https://dvonb.xyz${student.media.src}`}
-                  alt={student.media.caption || `${student.name.first}'s photo`}
-                  
-                />
-                {student.media.caption && (
-                  <figcaption                  >
-                    {student.media.caption}
-                  </figcaption>
-                )}
-              </figure>
-            )}
+              {student.quote?.text && (
+                <blockquote>
+                  “{student.quote.text}”
+                  {student.quote.author && <> — {student.quote.author}</>}
+                </blockquote>
+              )}
 
-            <footer >
-              <strong>Links:</strong>
-              <ul >
-                {student.links?.charlotte && (
-                  <li>
-                    <a
-                      href={student.links.charlotte}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Charlotte page
-                    </a>
-                  </li>
-                )}
-                {student.links?.github && (
-                  <li>
-                    <a
-                      href={student.links.github}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      GitHub
-                    </a>
-                  </li>
-                )}
-                {student.links?.githubio && (
-                  <li>
-                    <a
-                      href={student.links.githubio}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      GitHub Pages
-                    </a>
-                  </li>
-                )}
-                {student.links?.linkedin && (
-                  <li>
-                    <a
-                      href={student.links.linkedin}
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      LinkedIn
-                    </a>
-                  </li>
-                )}
-              </ul>
-            </footer>
-          </article>
-        ))}
-      </section>
-    </main>
+              {student.media?.hasImage && (
+                <figure>
+                  <img
+                    src={`https://dvonb.xyz${student.media.src}`}
+                    alt={
+                      student.media.caption ||
+                      `${student.name.first}'s photo`
+                    }
+                  />
+                  {student.media.caption && (
+                    <figcaption>{student.media.caption}</figcaption>
+                  )}
+                </figure>
+              )}
+
+              <footer className="student-links">
+                {student.links &&
+                  (student.links.charlotte ||
+                    student.links.github ||
+                    student.links.githubio ||
+                    student.links.linkedin) && (
+                    <>
+                      <strong>Links:</strong>
+                      <ul className="student-links-list">
+                        {student.links.charlotte && (
+                          <li>
+                            <a
+                              href={student.links.charlotte}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              Charlotte page
+                            </a>
+                          </li>
+                        )}
+                        {student.links.github && (
+                          <li>
+                            <a
+                              href={student.links.github}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              GitHub
+                            </a>
+                          </li>
+                        )}
+                        {student.links.githubio && (
+                          <li>
+                            <a
+                              href={student.links.githubio}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              GitHub Pages
+                            </a>
+                          </li>
+                        )}
+                        {student.links.linkedin && (
+                          <li>
+                            <a
+                              href={student.links.linkedin}
+                              target="_blank"
+                              rel="noreferrer"
+                            >
+                              LinkedIn
+                            </a>
+                          </li>
+                        )}
+                      </ul>
+                    </>
+                  )}
+              </footer>
+            </article>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }
+
