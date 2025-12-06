@@ -87,7 +87,7 @@ export default function Students() {
         <input
           type="text"
           value={searchTerm}
-          placeholder="e.g. Adam"
+          placeholder="e.g. Michael"
           onChange={(e) => {
             setSearchTerm(e.target.value);
             setCurrentIndex(0);
