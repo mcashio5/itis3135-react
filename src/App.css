@@ -1,243 +1,309 @@
-#root{
-    width: 100%;
+/* src/App.css */
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
-body{
-    font-family: typewriter, monospace;
-    margin: 0px;
-    background-color: #f4f4f4;
-    color: #333;
-}
-header{
-    text-align: center;
-    margin-bottom: 20px;
-    background-color: #ffebcd;
-    width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-left: 0px;
-    padding-right: 0px;
-}
-header a{
-    text-decoration: none;
-    color: black;
-    font-style: bold;
+/* Global page styles */
 
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+body {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+  margin: 0;
+  background: radial-gradient(circle at top, #0c3257 0, #041529 55%, #020712 100%);
+  color: #f5f7ff;
 }
-.secondnav{
-    margin-top: 10px;
-    background-color: #87ccd8;
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border-radius: 5px;
-}
-.secondnav div{
-    background-color: rgb(53, 53, 152);
-    color: white;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-header div:hover{
-    transform: scale(1.1);
-    transition: all 0.3s ease;
 
-}
-div{
-    display: inline-block;
-    margin: 10px 15px;
-    padding: 5px 10px;
-    border-radius: 5px;
-    border: 3px solid #ccc;
-    background-color: #ffebfd;
-}
-h1{
-    font-size: 2.5em;
-    margin: 0;
-    color: #444;
-    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-main{
-    max-width: 1600px;
+/* Header and navigation */
 
-    line-height: 1.6;
-    padding: 10px 20px;
-    margin: 0 auto;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+header {
+  background-color: #071f34;
+  width: 100%;
+  padding: 1.25rem 1rem 0.75rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+  position: sticky;
+  top: 0;
+  z-index: 10;
 }
-footer{
-    text-align: center;
-    margin-top: 20px;
-    font-size: 0.9em;
-    color: #777;
-}
-hr{
-    margin-top: 20px;
-    border: none;
-    border-top: 1px solid #ccc;
-    width: 80%;
-    margin-left: auto;
-}
-img{
-    max-width: 300px;
-    height: auto;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border-radius: 10px;
-}
-figcaption{
-    text-align: center;
-    font-style: italic;
-    color: #555;
-    margin-top: 10px;
-    font-size: 0.9em;
-}
-footer a, main a{
-    color: green;
-    font-weight: bold;
 
+header h1 {
+  font-size: 2.4rem;
+  margin: 0;
+  text-align: center;
+  letter-spacing: 0.03em;
 }
-footer a:visited, main a:visited{
-    color: green;
-    font-weight: bold;
+
+/* Main nav bar under the title */
+.secondnav,
+nav.main-nav {
+  margin-top: 0.85rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
 }
+
+/* Pill style links */
+.secondnav a,
+nav.main-nav a {
+  display: inline-block;
+  padding: 0.45rem 1.2rem;
+  border-radius: 999px;
+  background-color: #0b3a63;
+  color: #f5f7ff;
+  font-weight: 600;
+  font-size: 0.95rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+  transition: background-color 0.2s ease, transform 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+/* For whatever link represents the current page, add className="active" */
+.secondnav a.active,
+nav.main-nav a.active {
+  background-color: #1b75ff;
+}
+
+.secondnav a:hover,
+nav.main-nav a:hover {
+  background-color: #155796;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.6);
+}
+
+/* Optional small vertical divider if you use one */
+.nav-divider {
+  width: 1px;
+  height: 18px;
+  background-color: #174b82;
+}
+
+/* Main content area */
+
+main {
+  flex: 1;
+  padding: 3rem 1rem 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Outer “card” */
+.content-shell {
+  max-width: 720px;
+  width: 100%;
+  background-color: #072743;
+  border-radius: 32px;
+  padding: 3rem 2.2rem;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Inner card */
+.inner-card {
+  background-color: #0b345d;
+  border-radius: 24px;
+  padding: 2.5rem 2rem;
+  text-align: center;
+}
+
+.inner-card h2,
+.inner-card h1 {
+  margin-bottom: 1rem;
+}
+
+.inner-card p {
+  margin: 0.5rem 0;
+}
+
+/* Footer */
+
+footer {
+  margin-top: auto;
+  background-color: #071f34;
+  color: #f5f7ff;
+  text-align: center;
+  font-size: 0.95rem;
+  padding: 1rem 0 1.5rem;
+  box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.footer-links {
+  margin-bottom: 0.5rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  font-weight: 600;
+}
+
+footer a {
+  color: #f5f7ff;
+}
+
+footer a:hover {
+  opacity: 0.85;
+}
+
+/* Tables (students page) */
+
 table {
-      width: 90%;
-      border-collapse: collapse;
-      background: #fff;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-      border-radius: 8px;
-      overflow: hidden;
-      justify-content: center;
-      margin: auto;
-    }
-
-    thead {
-      background: #333;
-      color: #fff;
-    }
-
-    thead th {
-      padding: 12px;
-      text-align: left;
-      font-size: 16px;
-    }
-
-    tbody td {
-      padding: 10px 12px;
-      border-bottom: 1px solid #ddd;
-    }
-
-    tbody tr:nth-child(even) {
-      background: #f9f9f9;
-    }
-
-    tbody tr:hover {
-      background: #eef6ff;
-    }
-@media screen and (min-width: 981px) and (max-width: 1400px){
-    body{
-        font-size: 18px;
-    }
-
+  width: 90%;
+  border-collapse: collapse;
+  background: #0a2a49;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  border-radius: 12px;
+  overflow: hidden;
+  margin: 1.5rem auto 0;
 }
-@media screen and (min-width: 601px) and (max-width: 980px){
-    body{
-        font-size: 16px;
-    }
-    header, .secondnav{
-        width: 90%;
-    }
+
+thead {
+  background: #102745;
+  color: #f5f7ff;
 }
-@media screen and (min-width: 300px) and (max-width: 600px){
-    body{
-        font-size: 14px;
-        margin: 10px;
-    }
-    header, .secondnav{
-        width: 100%;
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
-    div{
-        display: block;
-        margin: 10px auto;
-    }
-    img{
-        max-width: 100%;
-    }
+
+thead th {
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
 }
+
+tbody td {
+  padding: 10px 12px;
+  border-bottom: 1px solid #1a365c;
+}
+
+tbody tr:nth-child(even) {
+  background: #0d2f52;
+}
+
+tbody tr:hover {
+  background: #123b66;
+}
+
+/* Forms (contract page) */
 
 form {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    background-color: #f9f9f9;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-}
-form div{
-    margin-bottom: 15px;
-    width: 75%;
-}
-#add-course,#remove-course {
-    background-color: aquamarine;
-    color: charcoal;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
-}
-#remove-course{
-    float: right;
-}
-input, textarea, select {
-    width: 100%;
-    padding: 8px;
-    margin: 8px 0;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
+  max-width: 600px;
+  margin: 2rem auto 0;
+  padding: 1.5rem 1.75rem;
+  background-color: #0b345d;
+  border-radius: 16px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.7);
 }
 
-input[type="submit"] {
-    background-color: #87ccd8;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    cursor: pointer;
+form div {
+  margin-bottom: 15px;
+  width: 100%;
 }
 
 label {
-    font-weight: bold;
-    display: block;
-    margin-top: 10px;
+  font-weight: 600;
+  display: block;
+  margin-top: 6px;
 }
 
-.client{
-    max-width: 100%;
-    height: auto;
+input,
+textarea,
+select {
+  width: 100%;
+  padding: 8px;
+  margin-top: 6px;
+  border: 1px solid #20466f;
+  border-radius: 6px;
+  box-sizing: border-box;
+  background-color: #041529;
+  color: #f5f7ff;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: 2px solid #1b75ff;
+}
+
+input[type="submit"],
+#add-course,
+#remove-course {
+  background-color: #1b75ff;
+  color: #ffffff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+input[type="submit"]:hover,
+#add-course:hover,
+#remove-course:hover {
+  background-color: #1458bb;
+}
+
+#remove-course {
+  float: right;
+}
+
+/* Misc */
+
+img {
+  max-width: 300px;
+  height: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
+}
+
+figcaption {
+  text-align: center;
+  font-style: italic;
+  color: #d0d7ff;
+  margin-top: 10px;
+  font-size: 0.9em;
+}
+
+.client {
+  max-width: 100%;
+  height: auto;
 }
 
 fieldset {
-    border: 1px solid #ccc; /* Add a border for visibility */
-    padding: 10px; /* Add padding for better spacing */
-    border-radius: 5px; /* Add rounded corners */
+  border: 1px solid #20466f;
+  padding: 10px;
+  border-radius: 8px;
 }
-legend{
-    font-weight: bold;
-    padding: 0 5px;
-    font-size: 1.5em;
+
+legend {
+  font-weight: bold;
+  padding: 0 5px;
+  font-size: 1.3em;
 }
-.active{
-    display: block;
-}
-.inactive{
-    display: none;
+
+/* Simple mobile tweaks */
+
+@media screen and (max-width: 768px) {
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  .content-shell {
+    padding: 2.2rem 1.4rem;
+    border-radius: 24px;
+  }
+
+  .inner-card {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .secondnav,
+  nav.main-nav {
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
 }
