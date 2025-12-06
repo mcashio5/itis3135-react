@@ -1,11 +1,14 @@
 import { Link } from "react-router";
 export default function Navbar() {
-    return (
-        <nav>
-        <Link to="/"><div>Home</div></Link>
-        <Link to="/introduction"><div>Introduction</div></Link>
-        <Link to="/contract"><div>Contract</div></Link>
-        <Link to="/students"><div>Students</div></Link>
-        </nav>
-    );
+  return (
+    <nav className="main-nav">
+      <Link to="/" className="nav-pill">Home</Link>
+      <span className="nav-separator">|</span>
+      <Link to="/contract" className="nav-pill">Course Contract</Link>
+      <span className="nav-separator">|</span>
+      <Link to="/introduction" className="nav-pill">Introduction</Link>
+      <span className="nav-separator">|</span>
+      <Link to="/students" className="nav-pill">Students</Link>
+    </nav>
+  );
 }
